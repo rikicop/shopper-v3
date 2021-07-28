@@ -30,5 +30,4 @@ let items = [
         price: 599.99
     }
 ];
-    export {items};
-    
+export { items };
