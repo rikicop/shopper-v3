@@ -1,7 +1,6 @@
 import React from "react";
 
-const Nav = ({ activeTab, onTabChange }) => {
-  
+const Nav = ({ activeTab, onTabChange, setSearchTerm }) => {
   const itemClass = (tabName) =>
     `App-nav-item ${activeTab === tabName ? "selected" : ""}`;
 
@@ -17,10 +16,9 @@ const Nav = ({ activeTab, onTabChange }) => {
           <button onClick={() => onTabChange("cart")}>Cart</button>
         </li>
         <li className={inputClass("items")}>
-          Buscar <input type="text"/>
-        </li>   
+          Buscar <input type="text" onChange={e=>{setSearchTerm(e.target.value)}} />
+        </li>
       </ul>
-      
     </nav>
   );
 };
